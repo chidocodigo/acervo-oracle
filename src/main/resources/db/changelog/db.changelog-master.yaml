@@ -1,0 +1,119 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: paklei
+      changes:
+        - createTable:
+            tableName: tesistas
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: numero_cuenta
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: apellido_paterno
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: apellido_materno
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_tesistas
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+        - createTable:
+            tableName: asesores
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: clave_asesor
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: area
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: apellido_paterno
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: apellido_materno
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_asesores
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+        - createTable:
+            tableName: tesis
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: titulo
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: fecha
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: asesor_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tesista_id
+                  type: int
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_tesis
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+
+              
